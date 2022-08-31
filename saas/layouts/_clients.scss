@@ -1,0 +1,45 @@
+.clients {
+    @extend %section;
+    .clients-title {
+            color: var(--primary-text-color);
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.17;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+}
+.clients-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    @extend %list;
+    &__link {
+        transition: border-color var(--basic-animation);
+    
+        @extend %flex;
+        width: 170px;
+        height: 92px;
+        @include bordered(1px,#AFB1B8);
+        
+        border-radius: 4px;
+        }
+    
+        &__icon {
+            transition: fill var(--basic-animation);
+    
+            fill: #AFB1B8;
+        }
+    
+        &__link:hover,
+        &__link:focus {
+            border-color: var(--special-text-color);
+        }
+    
+        &__link:hover &__icon,
+        &__link:focus &__icon {
+            fill: var(--special-text-color)
+        }
+}
+

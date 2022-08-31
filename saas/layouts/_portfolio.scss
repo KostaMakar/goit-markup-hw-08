@@ -1,0 +1,162 @@
+.main-page {
+    @extend %section;
+    .btn-list {
+            @extend %flex;
+            margin-bottom: 50px;
+            @extend %list;
+    
+            &__item {
+                text-align: center;
+                align-items: center;
+    
+                .btn {
+                    transition: color var(--basic-animation),
+                    background-color var(--basic-animation),
+                    box-shadow var(--basic-animation);
+    
+                    border-radius: 4px;
+                    border-color: transparent;
+                    padding: 6px 22px;
+    
+                    color: var(--primary-text-color);
+                    background-color: #F5F4FA;
+                    cursor: pointer;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 1.6;
+                }    
+                .btn:hover,
+                .btn:focus {
+                    color: #FFFFFF;
+                    background-color: var(--special-text-color);
+                    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+                }
+    
+            }
+    
+            &__item:not(:last-child) {
+                margin-right: 8px;
+            }
+        }
+    
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            @extend %list;
+
+            &__item {
+                margin-right: 30px;
+                margin-bottom: 30px;
+                width: 370px;
+            
+                background-color: #FFFFFF;
+                }
+            
+            &__item:nth-child(3n) {
+                margin-right: 0px;
+                }
+            
+            &__item:nth-last-child(-n+3) {
+                margin-bottom: 0px;
+                }
+                &__link {
+                    transition: box-shadow var(--basic-animation);
+            
+                    display: block;
+                    text-decoration: none;
+                    .images__bg {
+                        position: relative;
+                        overflow: hidden;
+                        }
+
+                    .images__bg::before {
+                        display: inline-block;
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(33, 150, 243, 0.9);
+
+                        opacity: 0;
+                        transform: translateY(100%);
+                        transition: opacity var(--basic-animation),
+                        transform var(--basic-animation);
+                        }
+                    
+                    }
+            
+                &__link:hover,
+                &__link:focus {
+                    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+                    }
+            
+                &__link:hover ::before,
+                &__link:focus ::before {
+                    opacity: 1;
+                    transform: translateY(0%);
+                    }
+            
+                &__link:hover .images__bg-text,
+                &__link:focus .images__bg-text {
+                    opacity: 1;
+                    transform: translateY(0%);
+                    }
+                
+            
+                .images__bg-text {
+                    display: inline-block;
+                    position: absolute;
+                    padding: 63px 24px;
+            
+                    opacity: 0;
+                    transform: translateY(100%);
+                    transition: opacity var(--basic-animation),
+                    transform var(--basic-animation);
+            
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1.55;
+            
+                    color: #FFFFFF;
+                }
+                                        
+                .images-title {
+                    margin-bottom: 4px;
+            
+                    color: var(--primary-text-color);
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 2;
+                    letter-spacing: 0.06em;
+                }
+            
+                .images-text {
+            
+                    color: var(--secondary-text-color);
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 1.9;
+                }
+            
+                .frame {
+                    border: 1px solid #eeeeee;
+                    border-top: none;
+                    padding: 20px 24px;
+                }
+            
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+
+        }
+    
+        
+}

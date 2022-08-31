@@ -1,0 +1,69 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    /* adding animation for backdrop */
+    opacity: 1;
+    transition: opacity var(--basic-animation);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* modal window closed condition */
+.backdrop.is-hidden .modal {
+    transform: rotate(180deg);
+}
+
+/* modal window opened condition */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform var(--basic-animation);
+
+    width: 528px;
+    height: 581px;
+    padding: 40px;
+
+    background-color: var(--main-bg-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    @extend %flex;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--main-bg-color);
+}
+
+.modal-icon {
+    transition: fill var(--basic-animation);
+}
+
+.btn-close:hover .modal-icon,
+.btn-close:focus .modal-icon {
+    fill: var(--special-text-color);
+}

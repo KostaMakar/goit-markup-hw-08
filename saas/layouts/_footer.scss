@@ -1,0 +1,142 @@
+.footer {
+    background-color: var(--special-bg-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.general {
+    display: flex;
+}
+
+.first {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.social {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 12px;
+}
+
+.sign-up {
+    margin-left: 93px;
+    padding-top: 12px;
+}
+
+.soc-text,
+.sign-up__text {
+    margin-bottom: 20px;
+
+    color: var(--main-bg-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.form {
+    @extend %flex;
+}
+.sign-up input {
+    width: 358px;
+    padding: 15px 16px;
+    margin-right: 12px;
+    @include bordered(1px, rgba(255, 255, 255, 0.3));
+    border-radius: 4px;
+
+    background-color: var(--special-bg-color);
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.sign-up input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.sign-up-btn {
+
+    @extend %flex;
+
+    min-width: 200px;
+    @include bordered(1px, var(--special-text-color));
+    border-radius: 4px;
+    padding: 10px 28px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    color: #ffffff;
+    background-color: var(--special-text-color);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+
+    letter-spacing: 0.06em;
+}
+
+.soc {
+    background: rgba(255, 255, 255, 0.1);
+}
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+}
+
+.address-list {
+    padding: 0;
+    @extend %list;
+
+    &__item:not(:last-child) {
+        margin-bottom: 9px;
+        }
+    &__link {
+        transition: color var(--basic-animation);
+    
+        display: inline-block;
+    
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.7;
+        }
+    
+    &__link:hover,
+    &__link:focus {
+        color: var(--special-text-color);
+        }
+}
+.net-list--gap {
+    padding: 0;
+}
+.location {
+    transition: color var(--basic-animation);
+
+    display: inline-block;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.location:hover,
+.location:focus {
+    color: var(--special-text-color);
+}
+
+

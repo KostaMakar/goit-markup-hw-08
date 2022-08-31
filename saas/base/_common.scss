@@ -1,0 +1,25 @@
+/* Common for all lists */
+body {
+    color: var(--primary-text-color);
+    background-color: var(--main-bg-color);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.03em;
+}
+%list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+%section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin bordered ($size, $color) {
+    border: $size solid $color;
+}
