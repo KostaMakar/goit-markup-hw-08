@@ -1,8 +1,28 @@
 .team {
     background-color: #F5F4FA;
     @extend %section;
+    .team-title {
+        margin-bottom: 50px;
+
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.17;
+        text-align: center;
+        text-align: center;
+        @media  screen and (min-width: 480px) {
+        margin-bottom: 30px;
+        
+        font-size: 28px;
+        }
+    }
     .team-list {
             display: flex;
+            @media screen and (min-width: 480px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            }
             @extend %list;
     
             &__item {
@@ -11,10 +31,17 @@
                 border-radius: 0px 0px 4px 4px;
     
                 background-color: #ffffff;
+                @media screen and (max-width: 767px) {
+                    width: 450px;
+                }
             }
     
             &__item:not(:last-child) {
                 margin-right: 30px;
+                @media screen and (max-width: 767px) {
+                    margin-bottom: 30px;
+                    margin-right: 0;
+                }
             }
     
             &__title {

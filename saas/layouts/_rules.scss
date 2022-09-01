@@ -2,15 +2,32 @@
     @extend %section;
 
     .rules-list {
-        display: flex;
+        // display: flex;
+        
+        @media screen and (min-width: 480px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @media screen and (min-width: 1200px) {
+            display: flex;
+        }
         @extend %list;
 
         &__item {
             width: 270px;
+            @media screen and (min-width: 480px) {
+            width: 450px;  
+            }
+            @media screen and (min-width: 1200px) {
+            width: 270px;  
+            }
             }
         
         &__item:not(:last-child) {
             margin-right: 30px;
+            @media screen and (min-width: 480px) {
+            margin-bottom: 30px;  
+            }
             }
         &__title {
             margin-bottom: 10px;
@@ -20,6 +37,9 @@
             font-size: 14px;
             line-height: 1.14;
             text-transform: uppercase;
+            @media screen and (min-width: 480px) {
+            text-align: center;  
+            }
             }
         
         &__text {
@@ -39,6 +59,13 @@
             border-radius: 4px;
             gap: 30px;
             margin-bottom: 30px;
+
+            @media screen and (min-width: 480px) {
+            width: 450px;  
+            }
+            @media screen and (min-width: 1200px) {
+            width: 270px;  
+            }
         }    
     
         

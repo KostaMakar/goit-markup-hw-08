@@ -20,11 +20,26 @@ p {
 }
 
 .container {
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  outline: 2px solid tomato;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 /* Common for all lists */
@@ -45,6 +60,18 @@ body {
 .main-page, .clients, .team, .rules {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+@media screen and (min-width: 480px) {
+  .main-page, .clients, .team, .rules {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-page, .clients, .team, .rules {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .main-page .btn-list, .sign-up-btn, .form, .clients-list__link, .net-list__link, .work-item, .rules .box, .form-checkbox__label, .btn-close, .contacts-list__link {
@@ -487,16 +514,42 @@ textarea:focus {
   outline: none;
 }
 
-.rules .rules-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (min-width: 480px) {
+  .rules .rules-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .rules .rules-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .rules .rules-list__item {
   width: 270px;
 }
+@media screen and (min-width: 480px) {
+  .rules .rules-list__item {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .rules .rules-list__item {
+    width: 270px;
+  }
+}
 .rules .rules-list__item:not(:last-child) {
   margin-right: 30px;
+}
+@media screen and (min-width: 480px) {
+  .rules .rules-list__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 .rules .rules-list__title {
   margin-bottom: 10px;
@@ -505,6 +558,11 @@ textarea:focus {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+@media screen and (min-width: 480px) {
+  .rules .rules-list__title {
+    text-align: center;
+  }
 }
 .rules .rules-list__text {
   color: var(--secondary-text-color);
@@ -519,6 +577,16 @@ textarea:focus {
   border-radius: 4px;
   gap: 30px;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 480px) {
+  .rules .box {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .rules .box {
+    width: 270px;
+  }
 }
 
 .work {
@@ -552,8 +620,7 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.work-title,
-.team-title {
+.work-title {
   margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
@@ -565,10 +632,39 @@ textarea:focus {
 .team {
   background-color: #F5F4FA;
 }
+.team .team-title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  text-align: center;
+}
+@media screen and (min-width: 480px) {
+  .team .team-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+}
 .team .team-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media screen and (min-width: 480px) {
+  .team .team-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 .team .team-list__item {
   width: 270px;
@@ -577,8 +673,19 @@ textarea:focus {
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
 }
+@media screen and (max-width: 767px) {
+  .team .team-list__item {
+    width: 450px;
+  }
+}
 .team .team-list__item:not(:last-child) {
   margin-right: 30px;
+}
+@media screen and (max-width: 767px) {
+  .team .team-list__item:not(:last-child) {
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
 }
 .team .team-list__title {
   padding-top: 30px;
@@ -956,6 +1063,7 @@ textarea:focus {
 }
 .main-page .images img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
 }/*# sourceMappingURL=main.css.map */
