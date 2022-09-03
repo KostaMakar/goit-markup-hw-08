@@ -26,6 +26,11 @@ p {
   margin-right: auto;
   outline: 2px solid tomato;
 }
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
 @media screen and (min-width: 480px) {
   .container {
     width: 480px;
@@ -73,6 +78,12 @@ body {
     padding-bottom: 60px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .main-page, .clients, .team, .rules {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
 
 .main-page .btn-list, .sign-up-btn, .form, .clients-list__link, .net-list__link, .work-item, .rules .box, .form-checkbox__label, .btn-close, .contacts-list__link {
   display: -webkit-box;
@@ -102,6 +113,48 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.head-nav {
+  position: relative;
+}
+
+.menu-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-button .menu-button__icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .menu-button__icon-cross {
+  display: block;
+}
+
+.menu-button.is-open .menu-button__icon-menu {
+  display: none;
+}
+
+.menu-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--nav-bg-color);
+  padding: 40px;
+  text-align: center;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+}
+.menu-container.is-open {
+  display: block;
 }
 
 .logo {
@@ -239,6 +292,22 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+@media screen and (min-width: 320) {
+  .title {
+    width: 200px;
+    color: red;
+    font-size: 22px;
+    line-height: 1.62;
+  }
+}
+@media screen and (min-width: 480) and (max-width: 767px) {
+  .title {
+    width: 360px;
+    color: red;
+    font-size: 26px;
+    line-height: 1.62;
+  }
+}
 
 .order-button {
   display: block;
@@ -256,6 +325,11 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+}
+@media screen and (min-width: 320px) and (max-width: 1199px) {
+  .order-button {
+    min-width: 200px;
+  }
 }
 
 .backdrop {
@@ -592,6 +666,11 @@ textarea:focus {
 .work {
   padding-bottom: 94px;
 }
+@media screen and (max-width: 1199px) {
+  .work {
+    display: none;
+  }
+}
 
 .work-list {
   display: -webkit-box;
@@ -640,7 +719,7 @@ textarea:focus {
   text-align: center;
   text-align: center;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .team .team-title {
     margin-bottom: 30px;
     font-size: 28px;
@@ -651,7 +730,7 @@ textarea:focus {
   display: -ms-flexbox;
   display: flex;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .team .team-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -747,6 +826,12 @@ textarea:focus {
   text-align: center;
   margin-bottom: 50px;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .clients .clients-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
 
 .clients-list {
   display: -webkit-box;
@@ -758,6 +843,15 @@ textarea:focus {
   gap: 30px;
   padding: 0;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .clients-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 .clients-list__link {
   -webkit-transition: border-color var(--basic-animation);
   transition: border-color var(--basic-animation);
@@ -765,6 +859,11 @@ textarea:focus {
   height: 92px;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
+}
+@media screen and (max-width: 767px) {
+  .clients-list__link {
+    width: 210px;
+  }
 }
 .clients-list__icon {
   -webkit-transition: fill var(--basic-animation);
@@ -789,11 +888,23 @@ textarea:focus {
   display: -ms-flexbox;
   display: flex;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .general {
+    display: block;
+  }
+}
 
 .first {
   display: inline-block;
   margin: 0;
   padding: 0;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .first {
+    display: block;
+    margin-bottom: 60px;
+    text-align: center;
+  }
 }
 
 .social {
@@ -801,20 +912,50 @@ textarea:focus {
   margin-left: 70px;
   padding-top: 12px;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .social {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
 
 .sign-up {
   margin-left: 93px;
   padding-top: 12px;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .sign-up {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .soc-text,
 .sign-up__text {
+  display: inline-block;
   margin-bottom: 20px;
   color: var(--main-bg-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .form {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .sign-up {
+    text-align: center;
+  }
 }
 
 .sign-up input {
@@ -828,6 +969,13 @@ textarea:focus {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .sign-up input {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 
 .sign-up input::-webkit-input-placeholder {
@@ -864,6 +1012,13 @@ textarea:focus {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .sign-up-btn {
+    margin-right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .soc {
