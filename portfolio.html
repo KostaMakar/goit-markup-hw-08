@@ -15,10 +15,20 @@
 <body>
 <!--header-->
     <header class="header">
-        <!--Navigation-->
         <div class="container head-nav">
             <nav class="nav">
-                <a class="logo" href="./index.html"><span class="logo-color">Web</span>Studio</a>
+                <a class="logo" href="./index.html"><span class="logo__color">Web</span>Studio</a>
+                <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container"
+                    data-menu-button>
+                    <svg width="40" height="40" aria-label="menu mobile switch">
+                        <use class="menu-button__icon-menu" href="./images/symbol-defs.svg#icon-menu_8"></use>
+                        <use class="menu-button__icon-cross" href="./images/symbol-defs.svg#icon-close_8"></use>
+                    </svg>
+                </button>
+                <div class="menu-container" id="menu-container" data-menu>
+                    <div class="navigation"></div>
+                    <div class="contacts"></div>
+                </div>
                 <ul class="nav-list">
                     <li class="nav-list__item">
                         <a class="nav-list__link" href="./index.html">Студия</a>
@@ -54,13 +64,13 @@
                 <!-- hidden title -->
                 <ul class="btn-list">
                     <li class="btn-list__item">
-                        <button class="btn" type="button">Все</button>
+                        <button class="btn" type="button">Усі</button>
                     </li>
                     <li class="btn-list__item">
-                        <button class="btn" type="button">Веб-сайты</button>
+                        <button class="btn" type="button">Веб-сайти</button>
                     </li>
                     <li class="btn-list__item">
-                        <button class="btn" type="button">Приложения</button>
+                        <button class="btn" type="button">Додатки</button>
                     </li>
                     <li class="btn-list__item">
                         <button class="btn" type="button">Дизайн</button>
@@ -110,7 +120,7 @@
                             </div>
                             <div class="frame">
                                 <h2 class="images-title">Ресторан Seafood</h2>
-                                <p class="images-text">Приложение</p>
+                                <p class="images-text">Додаток</p>
                             </div>
                         </a>
                     </li>
@@ -138,7 +148,7 @@
                             </div>
                             <div class="frame">
                                 <h2 class="images-title">Проект Boxes</h2>
-                                <p class="images-text">Приложение</p>
+                                <p class="images-text">Додаток</p>
                             </div>
                         </a>
                     </li>
@@ -194,7 +204,7 @@
                             </div>
                             <div class="frame">
                                 <h2 class="images-title">Growing Business</h2>
-                                <p class="images-text">Приложение</p>
+                                <p class="images-text">Додаток</p>
                             </div>
                         </a>
                     </li>
@@ -264,5 +274,21 @@
             </div>
         </div>
     </footer>
+<script>
+     (() => {
+            const menuBtnRef = document.querySelector("[data-menu-button]");
+            const mobileMenuRef = document.querySelector("[data-menu]");
+
+            menuBtnRef.addEventListener("click", () => {
+                const expanded =
+                    menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+
+                menuBtnRef.classList.toggle("is-open");
+                menuBtnRef.setAttribute("aria-expanded", !expanded);
+
+                mobileMenuRef.classList.toggle("is-open");
+            });
+        })();
+</script>  
 </body>
 </html>
