@@ -18,6 +18,11 @@
     padding: 0;
     border: none;
     background-color: transparent;
+    justify-content: end;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
 }
 .menu-button .menu-button__icon-cross {
     display: none;
@@ -29,19 +34,21 @@
     display: none;
 }
 .menu-container {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    
-    background-color: var(--nav-bg-color);
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
-    
     &.is-open {
         display: block;
+    }
+    @media screen and (min-width:320px) and (max-width: 767px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        background-color: var(--nav-bg-color);
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+        
     }
     }
 .logo {
@@ -54,6 +61,17 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
+
+    @media screen and (max-width: 479px){
+        margin-right: 110px;
+        font-size: 24px;
+        line-height: 1.16;
+    }
+    @media screen and (min-width: 480px) and (max-width: 767px){
+        margin-right: 276px;
+        font-size: 24px;
+        line-height: 1.16;
+    }
 }
 
 .logo__color {
@@ -63,6 +81,9 @@
 .nav-list {
     display: flex;
     @extend %list;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 
     &__item:not(:last-child) {
         margin-right: 50px;
@@ -111,6 +132,9 @@
 .contacts-list {
     display: flex;
     @extend %list;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 
     &__item:not(:last-child) {
         margin-right: 50px;
