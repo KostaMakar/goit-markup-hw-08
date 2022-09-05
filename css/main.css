@@ -645,6 +645,11 @@ textarea:focus {
 .rules .rules-list__item {
   width: 270px;
 }
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .rules .rules-list__item {
+    width: 290px;
+  }
+}
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .rules .rules-list__item {
     width: 450px;
@@ -652,7 +657,7 @@ textarea:focus {
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .rules .rules-list__item {
-    width: 450px;
+    width: 354px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -665,6 +670,17 @@ textarea:focus {
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .rules .rules-list__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .rules .rules-list__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .rules .rules-list__item:nth-child(-n+2) {
     margin-bottom: 30px;
   }
 }
@@ -688,22 +704,12 @@ textarea:focus {
   line-height: 1.7;
 }
 .rules .box {
-  width: 270px;
+  width: 100%;
   height: 120px;
   background: #F5F4FA;
   border-radius: 4px;
   gap: 30px;
   margin-bottom: 30px;
-}
-@media screen and (min-width: 480px) {
-  .rules .box {
-    width: 450px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .rules .box {
-    width: 270px;
-  }
 }
 
 .work {
@@ -773,7 +779,7 @@ textarea:focus {
   display: -ms-flexbox;
   display: flex;
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 1199px) {
   .team .team-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -795,9 +801,14 @@ textarea:focus {
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
 }
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .team .team-list__item {
     width: 450px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .team .team-list__item {
+    width: 354px;
   }
 }
 .team .team-list__item:not(:last-child) {
