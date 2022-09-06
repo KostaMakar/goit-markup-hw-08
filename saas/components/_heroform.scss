@@ -99,13 +99,31 @@ textarea:focus {
         line-height: 1.7;
     
         color: var(--secondary-text-color);
+        @media screen and (min-width:320px) and (max-width:479px) {
+        font-size: 8px;
+        line-height: 1.16;    
+        }
+        @media screen and (min-width:480px) and (max-width:767px) {
+        font-size: 12px;
+        line-height: 1.16;    
+        }
         }
     &__link {
+        margin-left: 5px;
+
         font-weight: 400;
         font-size: 14px;
         line-height: 1.7;
     
         color: var(--special-text-color);
+        @media screen and (min-width:320px) and (max-width:479px) {
+        font-size: 8px;
+        line-height: 1.16;    
+        }
+        @media screen and (min-width:480px) and (max-width:767px) {
+        font-size: 12px;
+        line-height: 1.16;    
+        }
         }
     /* cusomazing checkbox */
     &__input {
