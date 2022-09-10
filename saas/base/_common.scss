@@ -6,6 +6,18 @@ body {
     font-style: normal;
     letter-spacing: 0.03em;
 }
+// added to remove backdrop scrolling of the site when modal window is open
+body.modal-open {
+overflow: hidden;
+}
+// to be added to all pictures
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
 %list {
     margin: 0px;
     padding: 0px;

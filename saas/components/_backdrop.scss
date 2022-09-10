@@ -12,6 +12,7 @@
     /* adding animation for backdrop */
     opacity: 1;
     transition: opacity var(--basic-animation);
+    overflow-y: scroll;
 }
 
 .backdrop.is-hidden {
