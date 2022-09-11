@@ -853,9 +853,6 @@ textarea:focus {
     display: flex;
   }
 }
-.rules .rules-list__item {
-  width: 270px;
-}
 @media screen and (min-width: 320px) and (max-width: 479px) {
   .rules .rules-list__item {
     width: 290px;
