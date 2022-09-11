@@ -141,6 +141,9 @@
 }
 .mob-menu-btn:hover .mob-menu-btn__icon {
     fill: var(--special-text-color);
+}
+.nav .mob-nav__link.current {
+    color: var(--special-text-color);
 } 
 .mob-nav {
     margin-bottom: 306px;
@@ -163,6 +166,7 @@
     &__link:focus {
         color: var(--special-text-color);
     }
+    
 }
 .mob-cont {
     margin-bottom: 64px;

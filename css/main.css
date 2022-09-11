@@ -257,6 +257,10 @@ img {
   fill: var(--special-text-color);
 }
 
+.nav .mob-nav__link.current {
+  color: var(--special-text-color);
+}
+
 .mob-nav {
   margin-bottom: 306px;
 }
