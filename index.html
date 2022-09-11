@@ -20,20 +20,19 @@
                     <a class="logo" href="./index.html"><span class="logo__color">Web</span>Studio</a>
                     <button 
                     type="button" 
-                    class="menu-button" 
+                    class="menu-button js-open-menu" 
                     aria-expanded="false"
                     aria-controls="menu-container"
-                    data-menu-button>
+                    >
                         <svg 
                         width="40" 
                         height="40"
                         aria-label="Mobile menu switch">
-                            <use class="icon-cross" href="./images/symbol-defs.svg#icon-close_8"></use>
                             <use class="icon-menu" href="./images/symbol-defs.svg#icon-menu_8"></use>
                         </svg>
                     </button>
-                    <div class="menu-container" id="menu-container" data-menu>
-                        <button class="mob-menu-btn" data-menu-button>
+                    <div class="menu-container js-menu-container" id="menu-container" >
+                        <button class="mob-menu-btn js-close-menu" >
                             <svg class="mob-menu-btn__icon" width="40" height="40">
                                 <use class="icon-cross" href="./images/symbol-defs.svg#icon-close_8"></use>
                             </svg>
@@ -577,6 +576,36 @@
                     menuBtnRef.setAttribute("aria-expanded", !expanded);
 
                     mobileMenuRef.classList.toggle("is-open");
+                });
+            })();
+    </script>
+    <script>
+        (() => {
+                const mobileMenu = document.querySelector('.js-menu-container');
+                const openMenuBtn = document.querySelector('.js-open-menu');
+                const closeMenuBtn = document.querySelector('.js-close-menu');
+
+                const toggleMenu = () => {
+                    const isMenuOpen =
+                        openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+                    openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+                    mobileMenu.classList.toggle('is-open');
+
+                    const scrollLockMethod = !isMenuOpen
+                        ? 'disableBodyScroll'
+                        : 'enableBodyScroll';
+                    bodyScrollLock[scrollLockMethod](document.body);
+                };
+
+                openMenuBtn.addEventListener('click', toggleMenu);
+                closeMenuBtn.addEventListener('click', toggleMenu);
+
+                // Close the mobile menu on wider screens if the device orientation changes
+                window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
+                    if (!e.matches) return;
+                    mobileMenu.classList.remove('is-open');
+                    openMenuBtn.setAttribute('aria-expanded', false);
+                    bodyScrollLock.enableBodyScroll(document.body);
                 });
             })();
     </script>
