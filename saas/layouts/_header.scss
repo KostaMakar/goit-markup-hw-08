@@ -131,7 +131,8 @@
         }
 
     &.is-open {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 .mob-menu-btn {
     position: absolute;
